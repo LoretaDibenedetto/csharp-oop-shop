@@ -13,7 +13,7 @@ namespace csharp_oop_shop
         private string name;
         private string description;
         private int price;
-        private float iva;
+        private int iva;
 
 
 
@@ -28,7 +28,7 @@ namespace csharp_oop_shop
 
 
         // COSTRUTTORE
-        public Prodotto( string name, string description, int price, float iva)
+        public Prodotto( string name, string description, int price, int iva)
         {
             this.barcode = GenerateCode();
             this.name = name;
@@ -49,6 +49,39 @@ namespace csharp_oop_shop
         }
 
 
+        public int Barcode
+        {
+            get { return this.barcode; }
+        }
+
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
+
+        public string Description
+        { get { return this.description; }
+        set { this.description = value; } }
+
+        public int Price
+        {
+            get { return this.price; }
+            set { this.price = value; }
+        }
+
+        public int Iva
+        {
+            get { return this.iva; }
+            set { this.iva = value; }
+
+
+        }
+
+        public int priceIva()
+        {
+            return this.price + ( this.price * iva / 100);
+        }
 
 
 
